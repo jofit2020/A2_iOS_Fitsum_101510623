@@ -12,6 +12,7 @@
 		65609FB92F882AED00BA9ED5 /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65609FB82F882AED00BA9ED5 /* Product+CoreDataClass.swift */; };
 		65609FBB2F882B8200BA9ED5 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65609FBA2F882B8200BA9ED5 /* Product+CoreDataProperties.swift */; };
 		65609FBD2F882DCB00BA9ED5 /* SampleDataSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65609FBC2F882DCB00BA9ED5 /* SampleDataSeeder.swift */; };
+		65609FBF2F882F7900BA9ED5 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65609FBE2F882F7900BA9ED5 /* ProductViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		65609FB82F882AED00BA9ED5 /* Product+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataClass.swift"; sourceTree = "<group>"; };
 		65609FBA2F882B8200BA9ED5 /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		65609FBC2F882DCB00BA9ED5 /* SampleDataSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDataSeeder.swift; sourceTree = "<group>"; };
+		65609FBE2F882F7900BA9ED5 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +77,7 @@
 		65609FB42F8826FA00BA9ED5 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				65609FBE2F882F7900BA9ED5 /* ProductViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				65609FA82F8817EF00BA9ED5 /* ContentView.swift in Sources */,
 				65609FBB2F882B8200BA9ED5 /* Product+CoreDataProperties.swift in Sources */,
 				65609FA92F8817EF00BA9ED5 /* Persistence.swift in Sources */,
+				65609FBF2F882F7900BA9ED5 /* ProductViewModel.swift in Sources */,
 				65609FBD2F882DCB00BA9ED5 /* SampleDataSeeder.swift in Sources */,
 				65609FB92F882AED00BA9ED5 /* Product+CoreDataClass.swift in Sources */,
 			);
