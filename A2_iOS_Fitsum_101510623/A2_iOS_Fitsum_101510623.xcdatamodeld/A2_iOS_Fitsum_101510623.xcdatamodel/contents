@@ -5,7 +5,7 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="productDescription" optional="YES" attributeType="String"/>
-        <attribute name="productID" optional="YES"/>
+        <attribute name="productID" optional="YES" attributeType="String"/>
         <attribute name="provider" optional="YES" attributeType="String"/>
     </entity>
 </model>

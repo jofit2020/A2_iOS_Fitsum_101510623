@@ -1,9 +1,10 @@
 //
-//  ProductViewModel.swift
+//  ProductViewModel 2.swift
 //  A2_iOS_Fitsum_101510623
 //
 //  Created by Serbijos on 09/04/26.
 //
+
 
 import Foundation
 import CoreData
@@ -32,7 +33,22 @@ final class ProductViewModel: ObservableObject {
 
         do {
             products = try context.fetch(request)
-            searchProducts()
+
+            if searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                filteredProducts = products
+            } else {
+                let text = searchText.lowercased()
+                filteredProducts = products.filter {
+                    ($0.name ?? "").lowercased().contains(text) ||
+                    ($0.productDescription ?? "").lowercased().contains(text)
+                }
+            }
+
+            if filteredProducts.isEmpty {
+                currentIndex = 0
+            } else if currentIndex >= filteredProducts.count {
+                currentIndex = filteredProducts.count - 1
+            }
         } catch {
             print("Fetch error: \(error.localizedDescription)")
         }
@@ -49,9 +65,7 @@ final class ProductViewModel: ObservableObject {
             }
         }
 
-        if currentIndex >= filteredProducts.count {
-            currentIndex = 0
-        }
+        currentIndex = 0
     }
 
     func addProduct(productID: String, name: String, description: String, price: Double, provider: String) {
@@ -66,23 +80,22 @@ final class ProductViewModel: ObservableObject {
         do {
             try context.save()
             fetchProducts()
+            if !filteredProducts.isEmpty {
+                currentIndex = filteredProducts.count - 1
+            }
         } catch {
             print("Save error: \(error.localizedDescription)")
         }
     }
 
     func nextProduct() {
-        guard !filteredProducts.isEmpty else { return }
-        if currentIndex < filteredProducts.count - 1 {
-            currentIndex += 1
-        }
+        guard currentIndex < filteredProducts.count - 1 else { return }
+        currentIndex += 1
     }
 
     func previousProduct() {
-        guard !filteredProducts.isEmpty else { return }
-        if currentIndex > 0 {
-            currentIndex -= 1
-        }
+        guard currentIndex > 0 else { return }
+        currentIndex -= 1
     }
 
     var currentProduct: Product? {
@@ -92,5 +105,13 @@ final class ProductViewModel: ObservableObject {
             return nil
         }
         return filteredProducts[currentIndex]
+    }
+
+    var canGoPrevious: Bool {
+        currentIndex > 0
+    }
+
+    var canGoNext: Bool {
+        currentIndex < filteredProducts.count - 1
     }
 }

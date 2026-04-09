@@ -21,3 +21,6 @@ extension Product {
     @NSManaged public var price: Double
     @NSManaged public var provider: String?
 }
+
+extension Product: Identifiable {
+}
