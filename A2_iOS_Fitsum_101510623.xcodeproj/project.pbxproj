@@ -6,8 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		65609FA82F8817EF00BA9ED5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65609FA32F8817EF00BA9ED5 /* ContentView.swift */; };
+		65609FA92F8817EF00BA9ED5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65609FA42F8817EF00BA9ED5 /* Persistence.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		65609F8D2F88171A00BA9ED5 /* A2_iOS_Fitsum_101510623.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = A2_iOS_Fitsum_101510623.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65609FA32F8817EF00BA9ED5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		65609FA42F8817EF00BA9ED5 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +39,11 @@
 		65609F842F88171A00BA9ED5 = {
 			isa = PBXGroup;
 			children = (
+				65609FB72F88271B00BA9ED5 /* Utilities */,
+				65609FB62F88271000BA9ED5 /* CoreData */,
+				65609FB52F88270700BA9ED5 /* Views */,
+				65609FB42F8826FA00BA9ED5 /* ViewModels */,
+				65609FB32F8826F100BA9ED5 /* Models */,
 				65609F8F2F88171A00BA9ED5 /* A2_iOS_Fitsum_101510623 */,
 				65609F8E2F88171A00BA9ED5 /* Products */,
 			);
@@ -43,6 +55,43 @@
 				65609F8D2F88171A00BA9ED5 /* A2_iOS_Fitsum_101510623.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		65609FB32F8826F100BA9ED5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		65609FB42F8826FA00BA9ED5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		65609FB52F88270700BA9ED5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				65609FA32F8817EF00BA9ED5 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		65609FB62F88271000BA9ED5 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				65609FA42F8817EF00BA9ED5 /* Persistence.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		65609FB72F88271B00BA9ED5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +168,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65609FA82F8817EF00BA9ED5 /* ContentView.swift in Sources */,
+				65609FA92F8817EF00BA9ED5 /* Persistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
