@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		65609FA82F8817EF00BA9ED5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65609FA32F8817EF00BA9ED5 /* ContentView.swift */; };
 		65609FA92F8817EF00BA9ED5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65609FA42F8817EF00BA9ED5 /* Persistence.swift */; };
+		65609FB92F882AED00BA9ED5 /* Product+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65609FB82F882AED00BA9ED5 /* Product+CoreDataClass.swift */; };
+		65609FBB2F882B8200BA9ED5 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65609FBA2F882B8200BA9ED5 /* Product+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		65609F8D2F88171A00BA9ED5 /* A2_iOS_Fitsum_101510623.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = A2_iOS_Fitsum_101510623.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65609FA32F8817EF00BA9ED5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		65609FA42F8817EF00BA9ED5 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		65609FB82F882AED00BA9ED5 /* Product+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataClass.swift"; sourceTree = "<group>"; };
+		65609FBA2F882B8200BA9ED5 /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -60,6 +64,8 @@
 		65609FB32F8826F100BA9ED5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				65609FB82F882AED00BA9ED5 /* Product+CoreDataClass.swift */,
+				65609FBA2F882B8200BA9ED5 /* Product+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -169,7 +175,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				65609FA82F8817EF00BA9ED5 /* ContentView.swift in Sources */,
+				65609FBB2F882B8200BA9ED5 /* Product+CoreDataProperties.swift in Sources */,
 				65609FA92F8817EF00BA9ED5 /* Persistence.swift in Sources */,
+				65609FB92F882AED00BA9ED5 /* Product+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
