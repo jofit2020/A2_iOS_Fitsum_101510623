@@ -1,13 +1,108 @@
 import SwiftUI
+import CoreData
+import Combine
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    @StateObject private var viewModelHolder = ProductViewModelHolder()
+    @State private var showAddSheet = false
+
     var body: some View {
-        NavigationStack {
-            ProductListView()
+        NavigationView {
+            VStack(spacing: 16) {
+                searchBar
+
+                if let product = viewModelHolder.viewModel?.currentProduct {
+                    ProductDetailView(product: product)
+                } else {
+                    Text("No products found")
+                        .font(.headline)
+                        .foregroundColor(.secondary)
+                        .padding()
+                }
+
+                navigationButtons
+
+                NavigationLink(destination: ProductListView(products: viewModelHolder.viewModel?.filteredProducts ?? [])) {
+                    Text("View Full Product List")
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .padding(.horizontal)
+                }
+
+                Button(action: {
+                    showAddSheet = true
+                }) {
+                    Text("Add New Product")
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.green)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .padding(.horizontal)
+                }
+
+                Text("Fitsum Asgedom - Student ID: 101510623")
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
+                    .padding(.top, 8)
+
+                Spacer()
+            }
+            .navigationTitle("Product Browser")
+            .onAppear {
+                if viewModelHolder.viewModel == nil {
+                    viewModelHolder.viewModel = ProductViewModel(context: viewContext)
+                } else {
+                    viewModelHolder.viewModel?.fetchProducts()
+                }
+            }
+            .sheet(isPresented: $showAddSheet) {
+                if let vm = viewModelHolder.viewModel {
+                    AddProductView(viewModel: vm)
+                }
+            }
         }
+    }
+
+    private var searchBar: some View {
+        VStack(alignment: .leading) {
+            TextField("Search by product name or description", text: Binding(
+                get: { viewModelHolder.viewModel?.searchText ?? "" },
+                set: { viewModelHolder.viewModel?.searchText = $0 }
+            ))
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .padding(.horizontal)
+        }
+    }
+
+    private var navigationButtons: some View {
+        HStack(spacing: 20) {
+            Button("Previous") {
+                viewModelHolder.viewModel?.previousProduct()
+            }
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Color.orange)
+            .foregroundColor(.white)
+            .cornerRadius(10)
+
+            Button("Next") {
+                viewModelHolder.viewModel?.nextProduct()
+            }
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Color.purple)
+            .foregroundColor(.white)
+            .cornerRadius(10)
+        }
+        .padding(.horizontal)
     }
 }
 
-#Preview {
-    ContentView()
+final class ProductViewModelHolder: ObservableObject {
+    @Published var viewModel: ProductViewModel?
 }
