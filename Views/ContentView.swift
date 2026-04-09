@@ -87,7 +87,14 @@ struct ProductBrowserContainer: View {
             .foregroundColor(.white)
             .cornerRadius(10)
 
-           
+            Button("Next") {
+                viewModel.nextProduct()
+            }
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Color.purple)
+            .foregroundColor(.white)
+            .cornerRadius(10)
         }
         .padding(.horizontal)
     }
