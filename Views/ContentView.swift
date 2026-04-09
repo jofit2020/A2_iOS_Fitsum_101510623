@@ -76,5 +76,19 @@ struct ProductBrowserContainer: View {
             .padding(.horizontal)
     }
 
+    private var navigationButtons: some View {
+        HStack(spacing: 20) {
+            Button("Previous") {
+                viewModel.previousProduct()
+            }
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Color.orange)
+            .foregroundColor(.white)
+            .cornerRadius(10)
 
+           
+        }
+        .padding(.horizontal)
+    }
 }
