@@ -14,6 +14,7 @@
 		65609FBD2F882DCB00BA9ED5 /* SampleDataSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65609FBC2F882DCB00BA9ED5 /* SampleDataSeeder.swift */; };
 		65609FBF2F882F7900BA9ED5 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65609FBE2F882F7900BA9ED5 /* ProductViewModel.swift */; };
 		65609FC12F88337300BA9ED5 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65609FC02F88337300BA9ED5 /* ProductDetailView.swift */; };
+		65609FC32F8833DA00BA9ED5 /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65609FC22F8833DA00BA9ED5 /* ProductListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		65609FBC2F882DCB00BA9ED5 /* SampleDataSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDataSeeder.swift; sourceTree = "<group>"; };
 		65609FBE2F882F7900BA9ED5 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		65609FC02F88337300BA9ED5 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		65609FC22F8833DA00BA9ED5 /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -89,6 +91,7 @@
 			children = (
 				65609FA32F8817EF00BA9ED5 /* ContentView.swift */,
 				65609FC02F88337300BA9ED5 /* ProductDetailView.swift */,
+				65609FC22F8833DA00BA9ED5 /* ProductListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65609FC32F8833DA00BA9ED5 /* ProductListView.swift in Sources */,
 				65609FC12F88337300BA9ED5 /* ProductDetailView.swift in Sources */,
 				65609FA82F8817EF00BA9ED5 /* ContentView.swift in Sources */,
 				65609FBB2F882B8200BA9ED5 /* Product+CoreDataProperties.swift in Sources */,
