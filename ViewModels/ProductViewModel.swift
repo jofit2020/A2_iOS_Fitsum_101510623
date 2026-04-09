@@ -56,7 +56,23 @@ final class ProductViewModel: ObservableObject {
         currentIndex = 0
     }
 
-  
+    func addProduct(productID: String, name: String, description: String, price: Double, provider: String) {
+        let product = Product(context: context)
+        product.id = UUID()
+        product.productID = productID
+        product.name = name
+        product.productDescription = description
+        product.price = price
+        product.provider = provider
+
+        do {
+            try context.save()
+            fetchProducts()
+        } catch {
+            print("Save error: \(error.localizedDescription)")
+        }
+    }
+
     func nextProduct() {
         guard !filteredProducts.isEmpty else { return }
         if currentIndex < filteredProducts.count - 1 {
