@@ -12,6 +12,11 @@ import CoreData
 struct A2_iOS_Fitsum_101510623App: App {
     let persistenceController = PersistenceController.shared
 
+    init() {
+        let context = persistenceController.container.viewContext
+        SampleDataSeeder.seedIfNeeded(context: context)
+    }
+
     var body: some Scene {
         WindowGroup {
             ContentView()
